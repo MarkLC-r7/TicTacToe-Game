@@ -150,18 +150,16 @@ int enter_grid_move(char board[N][N], char player, int grid_num)
 {
 	if(VALID_SQUARE(grid_num) == FALSE)
 		return TRUE;
-	
+	//Calculates corresponding i,j coordinates from grid number
 	int i,j;
 	if(grid_num < 4){
-		i = grid_num-1;
 		j = 0;
 	}else if(grid_num < 7){
-		i = grid_num-1-N;
 		j = 1;
 	}else{
-		i = grid_num-1-(2*N);
 		j = 2;
 	}
+	i = grid_num-1-(j*N);
 	if(IS_EMPTY(board[i][j]) == FALSE)
 		return TRUE;
 	board[i][j] = player;
