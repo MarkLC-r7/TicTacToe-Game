@@ -5,6 +5,7 @@
 *		@author Mark Lacomber
 */										
 
+#include <ctype.h>
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -176,7 +177,7 @@ int enter_coord_move(char board[N][N], char player, int x, int y)
 void print_board(char board[N][N])
 {
 	printf("\n");
-	int i, j;
+	int i;
 	for(i = 0; i < N; ++i)
 	{
 		printf("| %d | %d | %d |\t\t",1+(N*i),2+(N*i),3+(N*i));
