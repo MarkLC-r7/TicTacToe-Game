@@ -26,6 +26,7 @@
 #define OTHER(player) (player == PLAYER_X ? PLAYER_O : PLAYER_X)
 
 void init_board(char board[N][N]);
+void print_title();
 int player_move(char board[N][N], char player);
 int comp_move(char board[N][N], char player);
 int enter_grid_move(char board[N][N], char player, int grid_num);
@@ -42,6 +43,8 @@ int main()
 
 	char choice;
 	// Choose X or O   (X goes first)
+	print_title();
+
 	while(TRUE)
 	{
 		printf("Would you like to play as X and go first? (y/n): ");
@@ -89,6 +92,11 @@ void init_board(char board[N][N])
 			board[i][j] = EMPTY_CHAR;
 		}
 	}
+}
+
+void print_title()
+{
+	printf("\n***\t\tTicTacToe  (X's and O's)\t\t***\n\n");
 }
 
 int player_move(char board[N][N], char player)
