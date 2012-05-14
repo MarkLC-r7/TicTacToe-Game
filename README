@@ -1,0 +1,7 @@
+Tic Tac Toe game written in C for unix.
+
+It uses the minimax algorithm for the A.I
+
+I made this to help with learning both C and some basic
+
+artificial intelligence techniques. 
