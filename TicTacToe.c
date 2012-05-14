@@ -22,7 +22,7 @@
 #define VALID_SQUARE(square) (square >= 1 && square <= 9 ? TRUE : FALSE)
 #define VALID_COORD(x,y) ((x < 0 || x > N-1 || y < 0 || y > N-1) ? FALSE : TRUE)
 #define IS_EMPTY(square) (square == ' ' ? TRUE : FALSE)
-#define OTHER(player) (player == PLAYER_X ? PLAYER_O : PLAYER_X;
+#define OTHER(player) (player == PLAYER_X ? PLAYER_O : PLAYER_X)
 
 void init_board(char board[N][N]);
 int player_move(char board[N][N], char player);
