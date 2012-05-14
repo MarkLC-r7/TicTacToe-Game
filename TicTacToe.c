@@ -199,28 +199,26 @@ int check_winner(char board[N][N], char player)
 	for(i = 0; i < N; ++i)
 	{
 		//Row
-		if(board[0][i] != ' ')
+		if(board[0][i] != EMPTY_CHAR)
 		{
-			if(board[0][i] == board[1][i] && board[1][i] == board[2][i]){
+			if(board[0][i] == board[1][i] && board[1][i] == board[2][i])
 				return board[0][i] == player ? WIN : LOSE;
-			}
 		}
 		//Column
-		if(board[i][0] != ' ')
+		if(board[i][0] != EMPTY_CHAR)
 		{
-			if(board[i][0] == board[i][1] && board[i][1] == board[i][2]){
+			if(board[i][0] == board[i][1] && board[i][1] == board[i][2])
 				return board[i][0] == player ? WIN : LOSE;
-			}
 		}
 	}
 
 	//Left Diagonal
-	if(board[0][0] != ' ' && board[0][0] == board[1][1] && board[1][1] == board[2][2]){
+	if(board[0][0] != EMPTY_CHAR && board[0][0] == board[1][1] && board[1][1] == board[2][2]){
 		return board[0][0] == player ? WIN : LOSE;
 	}
 
 	//Right Diagonal
-	if(board[2][0] != ' ' && board[2][0] == board[1][1] && board[1][1] == board[0][2]){
+	if(board[2][0] != EMPTY_CHAR && board[2][0] == board[1][1] && board[1][1] == board[0][2]){
 		return board[2][0] == player ? WIN : LOSE;
 	}
 
@@ -229,10 +227,10 @@ int check_winner(char board[N][N], char player)
 	{
 		for(j = 0; j < N; ++j)
 		{
-			if(board[i][j] == ' ')
+			if(board[i][j] == EMPTY_CHAR)
 				break;
 		}
-		if(board[i][j] == ' ')
+		if(board[i][j] == EMPTY_CHAR)
 			break;
 	}
 	//Draw
@@ -250,7 +248,7 @@ int my_max(char board[N][N], char player)
 		return result;
 
 	int i, j, max;
-	max = -10;
+	max = -10; // Only actually needs to be less than -1
 	for(i = 0; i < N; ++i)
 	{
 		for(j = 0; j < N; ++j)
@@ -286,7 +284,7 @@ int my_min(char board[N][N], char player)
 		return result;
 	
 	int i, j, min;
-	min = 10;
+	min = 10; //Only actually has to be greater than 1
 	for(i = 0; i < N; ++i)
 	{
 		for(j = 0; j < N; ++j)
